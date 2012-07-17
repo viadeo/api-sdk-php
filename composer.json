@@ -1,5 +1,12 @@
 {
     "name": "viadeo/api-sdk-php",
+    "description": "Viadeo PHP SDK",
+    "type": "library",
+    "homepage": "http://viadeo.com",
+    "keywords": ["viadeo", "api", "sdk"],
     "require": {
+    },
+    "autoload": {
+        "classmap": ["lib/"]
     }
 }
