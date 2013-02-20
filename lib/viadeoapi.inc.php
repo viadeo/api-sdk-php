@@ -671,8 +671,11 @@ class ViadeoAPI {
             throw new ViadeoConnectionException(curl_error($ch));
         }
 
-        list($headers, $body) = explode("\r\n\r\n", $result);
+        $result_sections = explode("\r\n\r\n", $result);
+        $body = end($result_sections);
+        $header = prev($result_sections);
         $result = json_decode($body);
+
 
         $ex = null;
         if (isset($result->error)) {
