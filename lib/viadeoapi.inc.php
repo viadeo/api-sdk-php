@@ -649,8 +649,6 @@ class ViadeoAPI {
 
         $curl_opts = $this->curl_opts;
 
-        $curl_opts[CURLOPT_HTTPHEADER] = array('Authorization: Bearer ' . $this->getAccessToken());
-
         $headers = array('Authorization: Bearer ' . $this->getAccessToken());
         if ($request->getMethod() != "GET") {
             $headers[] = 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8';
@@ -675,7 +673,6 @@ class ViadeoAPI {
         $body = end($result_sections);
         $header = prev($result_sections);
         $result = json_decode($body);
-
 
         $ex = null;
         if (isset($result->error)) {
