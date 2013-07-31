@@ -557,7 +557,8 @@ class ViadeoAPI {
     }
 
     public function authorize($extras = array()) {
-        header("Location: " . self::getAuthorizationURL($extras));
+        header("Location: " . self::getAuthorizationURL($extras), true);
+        exit ();
     }
 
     // -- OAuth2.0 step 2 -- exchange code with access_token ------------------
